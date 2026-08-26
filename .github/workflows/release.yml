@@ -7,6 +7,8 @@ on:
 
 permissions:
   contents: write
+  id-token: write
+  attestations: write
 
 jobs:
   release:
@@ -16,8 +18,17 @@ jobs:
       - name: Build
         shell: cmd
         run: build.cmd
+      - name: Checksum
+        shell: pwsh
+        run: |
+          $hash = (Get-FileHash .\GainwardLedOff.exe -Algorithm SHA256).Hash.ToLower()
+          "$hash  GainwardLedOff.exe" | Set-Content .\SHA256SUMS.txt -Encoding ascii
+      - name: Attest
+        uses: actions/attest-build-provenance@v3
+        with:
+          subject-path: GainwardLedOff.exe
       - name: Publish
         shell: pwsh
         env:
           GH_TOKEN: ${{ github.token }}
-        run: gh release create "${{ github.ref_name }}" ".\GainwardLedOff.exe" --repo "${{ github.repository }}" --title "${{ github.ref_name }}" --notes "Download and run GainwardLedOff.exe." --verify-tag
+        run: gh release create "${{ github.ref_name }}" ".\GainwardLedOff.exe" ".\SHA256SUMS.txt" --repo "${{ github.repository }}" --title "${{ github.ref_name }}" --notes "Windows x64 build from the tagged source. SHA-256 is in SHA256SUMS.txt." --verify-tag

@@ -1,5 +1,7 @@
 # Gainward LED Off
 
+[![Release](https://github.com/NikitaMGrimm/gainward-led-off/actions/workflows/release.yml/badge.svg)](https://github.com/NikitaMGrimm/gainward-led-off/actions/workflows/release.yml)
+
 Turns off Gainward and Palit GPU LEDs through the same NVAPI paths used by Gainward EXPERTool 11.13. It applies Off once and exits.
 
 ## Use
