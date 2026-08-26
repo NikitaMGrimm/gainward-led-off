@@ -2,6 +2,8 @@
 
 Mapped from Gainward EXPERTool 11.13.0.1 (`TBPanel.exe`, SHA-256 `8EDD6485D011AE544A2F4F7876FA52B73C9CE74AF451047A430D563806408010`).
 
+Palit ThunderMaster 4.17.0.4 uses the same NVAPI wrappers, controller discovery, routing, raw backends, and illumination path (`ThPanel.exe`, SHA-256 `B4126D9A02ECE69475616A5C1329E0B42DD4A11812FD4359FBA7CF242586B6CA`).
+
 ## NVAPI
 
 | Operation | Interface ID |
