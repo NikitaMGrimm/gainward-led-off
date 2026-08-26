@@ -24,6 +24,7 @@ jobs:
           $hash = (Get-FileHash .\GainwardLedOff.exe -Algorithm SHA256).Hash.ToLower()
           "$hash  GainwardLedOff.exe" | Set-Content .\SHA256SUMS.txt -Encoding ascii
       - name: Attest
+        if: github.event.repository.private == false
         uses: actions/attest-build-provenance@v3
         with:
           subject-path: GainwardLedOff.exe
