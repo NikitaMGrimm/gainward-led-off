@@ -1,0 +1,5 @@
+LIBRARY nvapi64
+EXPORTS
+    nvapi_QueryInterface
+    nvapi_Direct_GetMethod
+    InstallTraceHook

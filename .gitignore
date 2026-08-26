@@ -1,4 +1,8 @@
 *.exe
+*.dll
+*.exp
+*.lib
+*.log
 *.obj
 *.pdb
 .vs/
