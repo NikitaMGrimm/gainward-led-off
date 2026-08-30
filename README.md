@@ -12,9 +12,9 @@ Build from source with `build.cmd`.
 
 ## Antivirus notice
 
-Microsoft Defender incorrectly detects v0.1.0 as
-`Trojan:Win32/Wacatac.C!ml`. The program contains no networking, persistence,
-or background components. The false positive was submitted to Microsoft for
-correction on August 29, 2026 and is pending review.
+Microsoft Defender security intelligence `1.457.394.0` incorrectly detected
+v0.1.0 as `Trojan:Win32/Wacatac.C!ml`. The same release downloads without
+detection after updating to `1.457.417.0`. If Defender flags it, update its
+Security Intelligence and try again.
 
 This uses undocumented NVAPI calls and raw I2C writes. Use it at your own risk.
